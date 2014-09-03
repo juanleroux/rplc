@@ -1,0 +1,24 @@
+#!/usr/bin/python
+ 
+import time
+## dd/mm/yyyy format
+print (time.strftime("%b %d %Y %H:%M:%S"))
+
+# Function Return Hour
+def hrs(str):
+print (time.strftime("%H"))
+	return;
+
+# Function Return Minute
+def min(str):
+print (time.strftime("%M"))
+	return;
+
+# Function Return Second
+def sec(str):
+print (time.strftime("%S"))
+	return;
+
+hour();
+min;
+sec();
