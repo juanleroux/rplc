@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>System Diagnostics</title>
+	<style type="text/css">
+		#container {
+		margin: 0 auto;
+		width: 800px;
+		text-align: center;
+		font-family: sans-serif;
+		}
+	</style>
+
+</head>
+<body>
+
+<?php
+
+$command = "python /home/pi/time/time.py";
+
+$pid = popen( $command,"r");
+ 
+while( !feof( $pid ) )
+{
+ echo fread($pid, 256);
+}
+pclose($pid);
+
+?>
+
+<div id="container">
+	<h2>System Diagnostics</h2>
+	<canvas id="analogClock" width="102" height="102">Clock</canvas>
+	<p>Current Time of the Raspberry Pi</p>
+	<p>By Juan Le Roux</p>
+</div>
+
+<script type="text/javascript" src="js/analogCanvasClock.js"></script>
+<script type="text/javascript">
+	setupAnalogClock(document.getElementById("analogClock"), 100);
+</script>
+
+
+
+</body>
+</html>
